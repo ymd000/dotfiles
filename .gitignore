@@ -10,3 +10,4 @@
 !/.config/
 !/.config/**
 !.gitignore
+!.tmux.conf
