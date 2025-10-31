@@ -15,3 +15,5 @@
 !/.config/lazygit/**
 !.gitignore
 !.tmux.conf
+!.zshrc
+!.p10k.zsh
