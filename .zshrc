@@ -299,3 +299,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1  # 仮想環境名をプロンプトに表�
 
 # [改善] その他 (L218)
 export NO_AT_BRIDGE=1  # GTKアプリの警告を抑制
+
+# === Claude Code Settings ===
+# Claude Code環境変数ファイルのパス設定
+export CLAUDE_ENV_FILE="$HOME/.claude_env"
