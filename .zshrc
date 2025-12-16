@@ -170,6 +170,11 @@ export SUDO_EDITOR="$EDITOR"
 # [改善] 基本的なPATH追加 (L191)
 export PATH=~/.local/bin:~/bin:$PATH
 
+# === [改善] CDPATH設定 ===
+# 効果: ディレクトリ名だけでgithub.com/ymd000配下のリポジトリに移動可能
+# 例: `cd dotfiles` で `~/github.com/ymd000/dotfiles` に移動
+export CDPATH=.:~:~/github.com/ymd000
+
 # === [改善] FZF設定 ===
 # [改善] FZFのデフォルトオプション (L204)
 # 効果: より使いやすいFZFの設定（高さ、ボーダー、キーバインド）
@@ -215,6 +220,38 @@ if command -v colordiff >/dev/null 2>&1; then
 fi
 
 # === [改善] 便利な関数 ===
+# [改善] tmux ショートカット関数
+# 効果: `t n` でtmux new、`t d` でtmux detach、`t a` でtmux attach
+function t() {
+  case "$1" in
+    n|new)
+      shift
+      tmux new "$@"
+      ;;
+    d|detach)
+      tmux detach
+      ;;
+    a|attach)
+      shift
+      tmux attach "$@"
+      ;;
+    l|ls|list)
+      tmux list-sessions
+      ;;
+    k|kill)
+      shift
+      tmux kill-session "$@"
+      ;;
+    *)
+      if [ $# -eq 0 ]; then
+        tmux
+      else
+        tmux "$@"
+      fi
+      ;;
+  esac
+}
+
 # [改善] FZFでコマンド履歴を選択 (L535-539)
 # 効果: Ctrl+R で過去のコマンドを検索・実行
 function select-history() {
