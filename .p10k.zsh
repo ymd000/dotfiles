@@ -180,6 +180,31 @@
     typeset -g POWERLEVEL9K_EMPTY_LINE_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL='%{%}'
   fi
 
+  # Default background color.
+  typeset -g POWERLEVEL9K_BACKGROUND=235
+
+  # Separator between same-color segments on the left.
+  typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR='%250F|'
+  # Separator between same-color segments on the right.
+  typeset -g POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR='%250F|'
+  # Separator between different-color segments on the left.
+  typeset -g POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
+  # Separator between different-color segments on the right.
+  typeset -g POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
+  # To remove a separator between two segments, add "_joined" to the second segment name.
+  # For example: POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(os_icon context_joined)
+
+  # The right end of left prompt.
+  typeset -g POWERLEVEL9K_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL=''
+  # The left end of right prompt.
+  typeset -g POWERLEVEL9K_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL=''
+  # The left end of left prompt.
+  typeset -g POWERLEVEL9K_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL=''
+  # The right end of right prompt.
+  typeset -g POWERLEVEL9K_RIGHT_PROMPT_LAST_SEGMENT_END_SYMBOL=''
+  # Left prompt terminator for lines without any segments.
+  typeset -g POWERLEVEL9K_EMPTY_LINE_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL=
+
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=
@@ -210,7 +235,7 @@
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=31
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
-  typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
+  typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last
   # Replace removed segment suffixes with this symbol.
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
   # Color of the shortened directory segments.
@@ -556,8 +581,12 @@
   #######################[ background_jobs: presence of background jobs ]#######################
   # Don't show the number of background jobs.
   typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=false
+<<<<<<< HEAD
   # Background jobs color.
   typeset -g POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND=70
+=======
+  # Background jobs color. typeset -g POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND=37
+>>>>>>> 70cde1e (update)
   # Custom icon.
   # typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VISUAL_IDENTIFIER_EXPANSION='⭐'
 

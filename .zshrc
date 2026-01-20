@@ -332,6 +332,7 @@ fi
 
 # === [改善] その他の便利な環境変数 ===
 # [改善] Python関連 (L209)
+alias python="python3"
 export VIRTUAL_ENV_DISABLE_PROMPT=1  # 仮想環境名をプロンプトに表示しない（P10kが表示するため）
 
 # [改善] その他 (L218)
