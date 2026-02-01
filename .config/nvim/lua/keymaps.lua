@@ -58,7 +58,7 @@ keymap.set('v', 'p', '"_dP', opts)  -- ペースト時にヤンクしない
 keymap.set('t', '<Esc>', '<C-\\><C-n>', opts)  -- ターミナルモードから抜ける
 
 -- === コメントトグル ===
-keymap.set('n', '<C-/>', function()
+keymap.set('n', '<leader>/', function()
   require('Comment.api').toggle.linewise.current()
 end, opts)
-keymap.set('v', '<C-/>', '<ESC><cmd>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', opts)
+keymap.set('v', '<leader>/', '<ESC><cmd>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', opts)
