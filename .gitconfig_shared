@@ -28,7 +28,7 @@
 	stp = stash pop
 
 [core]
-	editor = vim
+	editor = nvim
 
 [pull]
-	rebase = false
+	rebase = true
