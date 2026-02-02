@@ -21,7 +21,14 @@ return {
         
         -- キーマップ
         vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { silent = true })
-        vim.keymap.set('n', '<leader>e', ':NvimTreeFocus<CR>', { silent = true })
+        -- <leader>e でツリーと編集画面をトグル
+        vim.keymap.set('n', '<leader>e', function()
+            if vim.bo.filetype == 'NvimTree' then
+                vim.cmd('wincmd p')  -- 前のウィンドウに戻る
+            else
+                require('nvim-tree.api').tree.focus()
+            end
+        end, { silent = true })
 
   	-- nvim起動時にnvim-treeを自動で開く
     	vim.api.nvim_create_autocmd("VimEnter", {
