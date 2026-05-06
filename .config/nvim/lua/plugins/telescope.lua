@@ -82,6 +82,13 @@ return {
       builtin.live_grep({ default_text = vim.fn.expand('<cword>') })
     end, opts)
 
+    -- Visual mode: 選択テキストをlive_grep
+    keymap.set('v', '<leader>g', function()
+      vim.cmd('normal! "vy')
+      local selection = vim.fn.getreg('v'):gsub('\n', ' '):match('^%s*(.-)%s*$')
+      builtin.live_grep({ default_text = selection })
+    end, opts)
+
     -- Space + f でGitファイル検索（Gitリポジトリ外ではfind_files）
     keymap.set('n', '<leader>f', function()
       local ok = pcall(builtin.git_files)
