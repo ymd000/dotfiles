@@ -358,3 +358,8 @@ alias cc='claude'  # claudecodeエイリアス
 
 # Workspace helper functions
 [[ -f "$HOME/.config/bash/functions.sh" ]] && source "$HOME/.config/bash/functions.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source ~/github.com/ymd000/workspaece-structure/marp/functions.sh
