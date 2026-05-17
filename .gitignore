@@ -13,6 +13,11 @@
 !/.config/nvim/**
 !/.config/lazygit/
 !/.config/lazygit/**
+
+# KDE Plasma
+!/.config/kde/
+!/.config/kde/**
+
 !.gitignore
 !.tmux.conf
 !.zshrc
