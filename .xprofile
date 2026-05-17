@@ -1,0 +1,10 @@
+# キーボードレイアウト設定
+setxkbmap jp
+
+# CapsLockをEscに変更
+setxkbmap -option caps:escape
+
+# fcitx自動起動（まだ設定していない場合）
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx

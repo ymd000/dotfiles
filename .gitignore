@@ -18,6 +18,15 @@
 !/.config/kde/
 !/.config/kde/**
 
+# fcitx5
+!/.config/fcitx5/
+!/.config/fcitx5/config
+!/.config/fcitx5/profile
+
+# autostart
+!/.config/autostart/
+!/.config/autostart/fcitx5-wayland-launcher.desktop
+
 !.gitignore
 !.tmux.conf
 !.zshrc
