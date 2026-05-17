@@ -14,14 +14,15 @@
 !/.config/lazygit/
 !/.config/lazygit/**
 
-# KDE Plasma
-!/.config/kde/
-!/.config/kde/**
-
 # fcitx5
 !/.config/fcitx5/
 !/.config/fcitx5/config
 !/.config/fcitx5/profile
+
+# plasma-workspace
+!/.config/plasma-workspace/
+!/.config/plasma-workspace/env/
+!/.config/plasma-workspace/env/fcitx5.sh
 
 # autostart
 !/.config/autostart/
