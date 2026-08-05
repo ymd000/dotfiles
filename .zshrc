@@ -218,11 +218,11 @@ fi
 # [改善] exa（modernなls）を使用 (L713-721)
 # 効果: カラフルで見やすいファイルリスト表示
 if command -v exa >/dev/null 2>&1; then
-  alias l='exa -gbl --group-directories-first --time-style long-iso'
-  alias la='exa -agbl --group-directories-first --time-style long-iso'
-  alias ll='exa -agbl --group-directories-first --time-style long-iso'
+  alias l='exa -gblT --group-directories-first --time-style long-iso'
+  alias la='exa -agblT --group-directories-first --time-style long-iso'
+  alias ll='exa -agblT --group-directories-first --time-style long-iso'
 else
-  alias ll='ls -ahlF --color=auto --group-directories-first'
+  alias ll='ls -ahlFT --color=auto --group-directories-first'
   alias l=ll
   alias la=ll
 fi
