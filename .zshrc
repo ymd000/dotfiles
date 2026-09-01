@@ -217,10 +217,12 @@ fi
 
 # [改善] exa（modernなls）を使用 (L713-721)
 # 効果: カラフルで見やすいファイルリスト表示
+unalias ll l la 2>/dev/null  # oh-my-zshのエリアスをクリア
+
 if command -v eza >/dev/null 2>&1; then
-  alias l='eza -gblT --group-directories-first --time-style long-iso'
-  alias la='eza -agblT --group-directories-first --time-style long-iso'
-  alias ll='eza -agblT --group-directories-first --time-style long-iso'
+  ll() { eza -agblT --level=${1:-2} --group-directories-first --time-style long-iso "${@:2}"; }
+  l()  { eza -gblT  --level=${1:-2} --group-directories-first --time-style long-iso "${@:2}"; }
+  la() { eza -agblT --level=${1:-2} --group-directories-first --time-style long-iso "${@:2}"; }
 else
   alias ll='ls -ahlF --color=auto --group-directories-first'
   alias l=ll
